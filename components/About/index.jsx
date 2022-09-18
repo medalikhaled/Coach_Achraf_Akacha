@@ -1,7 +1,7 @@
 import styles from './about.module.css'
 import Image from 'next/image'
 import achraf from '../../public/photos/achraf1.png'
-import Button from '../button'
+import Button from '../Button'
 import { RoughNotation, RoughNotationGroup } from 'react-rough-notation'
 import { InView } from 'react-intersection-observer'
 import Link from 'next/link'

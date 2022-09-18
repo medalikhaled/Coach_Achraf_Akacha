@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Button from '../button'
+import Button from '../Button'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import { InView } from 'react-intersection-observer'
