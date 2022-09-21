@@ -8,7 +8,7 @@ export const textGradient =
 
 const Pricing = () => {
   return (
-    <InView threshold={0.25}>
+    <InView threshold={0.25} triggerOnce>
       {({ inView, ref }) => (
         <Fragment>
           <motion.h1

@@ -20,7 +20,10 @@ const Home: NextPage = () => {
     <div className="relative">
       <Scrolling position={'160vh'} />
       <Scrolling position={'10vh'} />
+
       <About />
+
+      <Gallery />
 
       <MainLayout>
         <div className="grid h-full min-h-full place-content-center border-t-[0.5px] border-t-darkfirst dark:border-t-white">
@@ -28,10 +31,8 @@ const Home: NextPage = () => {
         </div>
       </MainLayout>
 
-      <Gallery />
-
       <MainLayout>
-        <div className="h-full min-h-full w-full min-w-full">
+        <div className="h-full min-h-full w-full min-w-full ">
           <Transformation />
         </div>
       </MainLayout>

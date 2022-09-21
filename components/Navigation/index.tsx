@@ -53,7 +53,7 @@ export default function Nav(): JSX.Element {
 
         <h1 className="ml-2 flex flex-col items-center justify-center text-center font-teko text-sm font-light uppercase leading-4 text-black dark:text-white">
           <span className="mr-1 text-center">Team</span>
-          <span className="text-center">Achraf</span>
+          <span className="text-center">Akacha</span>
         </h1>
       </div>
 

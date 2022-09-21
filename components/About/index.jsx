@@ -1,6 +1,6 @@
 import styles from './about.module.css'
 import Image from 'next/image'
-import achraf from '../../public/photos/achraf1.png'
+import achraf from '../../public/photos/achraf1conv.png'
 import Button from '../Button'
 import { RoughNotation, RoughNotationGroup } from 'react-rough-notation'
 import { InView } from 'react-intersection-observer'
@@ -15,13 +15,13 @@ const About = () => {
       className={`${styles.main}  my-28 bg-white text-darkfirst dark:bg-darkfirst dark:text-white`}
     >
       <div
-        className={`${styles.imgAnimation}  mt-6 block items-center justify-center md:mt-0 md:flex md:w-1/2 `}
+        className={`${styles.imgAnimation} mt-6 block items-center justify-center md:mt-0 md:flex md:w-1/2  `}
       >
         <Image
           src={achraf}
           aria-label="my photo"
           alt="my photo"
-          width={500}
+          width={400}
           height={500}
         />
       </div>

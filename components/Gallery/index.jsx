@@ -8,7 +8,7 @@ const data = [
   {
     id: '01',
     title: 'PLAN NUTRITION & PLAN DE suppléments',
-    imgUrl: '/photos/achraf2.png',
+    imgUrl: '/photos/achraf3.png',
     reverse: false,
     button: 'contactez-nous',
     paragraph:
@@ -18,7 +18,7 @@ const data = [
   {
     id: '02',
     title: 'DES ENTRAINEMENTS PERSONNALISÉS',
-    imgUrl: '/photos/achraf4.png',
+    imgUrl: '/photos/achraf5.png',
     reverse: true,
     button: 'contactez-nous',
     paragraph:
@@ -28,7 +28,7 @@ const data = [
   {
     id: '03',
     title: 'COACHING PRIVÉ',
-    imgUrl: '/photos/achraf7.png',
+    imgUrl: '/photos/achraf8.png',
     reverse: false,
     button: 'contactez-nous',
     paragraph:
@@ -38,7 +38,7 @@ const data = [
   {
     id: '04',
     title: 'COACHING Online',
-    imgUrl: '/photos/achraf5.png',
+    imgUrl: '/photos/achraf1.png',
     reverse: true,
     button: 'contactez-nous',
     paragraph:
@@ -53,20 +53,26 @@ const ImageContainer = styled(motion.div)`
   background-position: center;
   height: 100%;
   width: 50%;
-  min-height: 100%;
+  min-height: 800px;
 
   @media (max-width: 768px) {
     height: 50%;
     width: 100%;
     /* background-position: 0 0rem; */
-    min-height: 50%;
+    min-height: 600px;
   }
 `
 
 export default function Gallery() {
   return (
     <>
-      <main id="services" className="isolate grid place-content-center">
+      <h1 className="mb-4 text-center font-teko text-3xl font-semibold uppercase tracking-wide text-darkfirst dark:text-white md:text-left md:text-5xl md:tracking-wider">
+        Nos Services :{' '}
+      </h1>
+      <main
+        id="services"
+        className="isolate grid min-h-fit place-content-center"
+      >
         {data.map((dataObject) => (
           <Card dataObject={dataObject} key={dataObject.id} />
         ))}
@@ -85,7 +91,7 @@ const Card = ({ dataObject }) => {
             dataObject.reverse
               ? 'flex-col md:flex-row-reverse'
               : ' flex-col md:flex-row'
-          } h-screen min-h-[99vh] w-[99vw] items-center justify-center overflow-hidden`}
+          }  w-[99vw] items-center justify-center overflow-hidden`}
         >
           <ImageContainer
             initial={{ opacity: 0, scale: 0.5 }}
@@ -98,7 +104,7 @@ const Card = ({ dataObject }) => {
             url={dataObject}
           />
 
-          <div className="relative grid h-1/2 w-full place-content-center bg-white px-24 dark:bg-[#272727] md:h-full md:min-h-full md:w-[50%]">
+          <div className="relative grid h-1/2 min-h-[500px] w-full place-content-center bg-white px-16 py-6 dark:bg-[#272727] md:h-full md:min-h-full md:w-[50%]">
             <div
               id="watermark"
               className="absolute left-12 top-8  h-1/2 min-h-fit font-teko text-4xl font-semibold text-darksecond opacity-30 dark:text-white md:left-24 md:h-full md:text-9xl"
@@ -108,7 +114,7 @@ const Card = ({ dataObject }) => {
             <h1 className="text-center font-teko text-3xl font-semibold uppercase tracking-wide text-darkfirst dark:text-white md:text-left md:text-5xl md:tracking-wider">
               {dataObject.title}
             </h1>
-            <p className="my-1 w-full text-center font-[Ubunto] text-xs font-light leading-7 text-darksecond dark:text-[#9c9c9c] md:my-3 md:w-[80%] md:text-left md:text-[17px]">
+            <p className="my-1 w-full text-center font-[Ubunto] text-sm font-light leading-7 text-darksecond dark:text-[#9c9c9c] md:my-3 md:w-[80%] md:text-left md:text-[17px]">
               {dataObject.paragraph}
             </p>
 

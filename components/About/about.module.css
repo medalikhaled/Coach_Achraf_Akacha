@@ -33,15 +33,8 @@
   .imgAnimation {
     border-radius: 0.5rem;
     transition: all 0.3s ease-in-out;
-    animation: fromTop 1s ease-in-out;
-  }
-  .imgAnimation:hover img {
-    border-radius: 50%;
-  }
-
-  .imgAnimation img {
-    border-radius: 50%;
-    scale: 0.8;
+    animation: fromTop 0.2s ease-in-out;
+    scale: 0.7;
   }
 }
 
