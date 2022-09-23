@@ -1,5 +1,7 @@
 import { NextPage } from 'next'
 import { useState, useId, FC } from 'react'
+import { motion } from 'framer-motion'
+import { variants } from './index'
 
 const Contact: NextPage = (): JSX.Element => {
   return (
@@ -18,7 +20,14 @@ const ContactForm: FC = (): JSX.Element => {
 
   const id = useId()
   return (
-    <form className="">
+    <motion.form
+      variants={variants}
+      initial="hidden"
+      animate="enter"
+      exit="exit"
+      transition={{ type: 'linear', duration: 0.5 }}
+      className=""
+    >
       <label htmlFor={id + 'name'}>
         <input
           id={id + 'name'}
@@ -59,6 +68,6 @@ const ContactForm: FC = (): JSX.Element => {
       >
         Send
       </button>
-    </form>
+    </motion.form>
   )
 }

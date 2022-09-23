@@ -39,7 +39,7 @@ export default function Nav(): JSX.Element {
         aria-label="Logo Icon"
         className={`hover:cursor-pointers flex items-center justify-center gap-1 md:ml-[100px]`}
       >
-        <Link href="\">
+        <Link href="/">
           <Image
             src={theme === 'dark' ? logo2 : logo}
             aria-label="logo"
@@ -58,7 +58,7 @@ export default function Nav(): JSX.Element {
       </div>
 
       <div className="hidden items-center justify-center space-x-6 text-2xl uppercase md:flex">
-        <Link href={'#services'}>
+        <Link href={'/#services'}>
           <span className="font-teko font-light text-white transition-all duration-200 ease-in-out hover:cursor-pointer hover:underline dark:text-white ">
             Services
           </span>

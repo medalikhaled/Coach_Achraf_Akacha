@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 // import { useRouter } from 'next/router'
+import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { useTheme } from 'next-themes'
 import MainLayout from '../components/Layouts/mainLayout'
@@ -14,10 +15,23 @@ import Social from '../components/social'
 import Scrolling from '../components/Scrolling'
 import Transformation from '../components/transformation'
 
+export const variants = {
+  hidden: { opacity: 0, x: -200, y: 0 },
+  enter: { opacity: 1, x: 0, y: 0 },
+  exit: { opacity: 0, x: 0, y: -100 },
+}
 const Home: NextPage = () => {
   const { theme } = useTheme()
+
   return (
-    <div className="relative">
+    <motion.div
+      variants={variants} // Pass the variant object into Framer Motion
+      initial="hidden" // Set the initial state to variants.hidden
+      animate="enter" // Animated state to variants.enter
+      exit="exit" // Exit state (used later) to variants.exit
+      transition={{ type: 'linear', duration: 0.5 }}
+      className="relative"
+    >
       <Scrolling position={'160vh'} />
       <Scrolling position={'10vh'} />
 
@@ -74,7 +88,7 @@ const Home: NextPage = () => {
           </svg>
         </Link>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

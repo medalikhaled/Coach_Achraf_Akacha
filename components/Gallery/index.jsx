@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Button from '../Button'
 import styled from 'styled-components'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { InView } from 'react-intersection-observer'
 
@@ -66,7 +67,7 @@ const ImageContainer = styled(motion.div)`
 export default function Gallery() {
   return (
     <>
-      <h1 className="mb-4 text-center font-teko text-3xl font-semibold uppercase tracking-wide text-darkfirst dark:text-white md:text-left md:text-5xl md:tracking-wider">
+      <h1 className="mb-4 flex items-center justify-center text-center font-teko text-3xl font-semibold uppercase tracking-wide text-darkfirst dark:text-white md:text-left md:text-5xl md:tracking-wider">
         Nos Services :{' '}
       </h1>
       <main
@@ -118,7 +119,11 @@ const Card = ({ dataObject }) => {
               {dataObject.paragraph}
             </p>
 
-            <Button>View More</Button>
+            <div className="w-[60%]">
+              <Button>
+                <Link href={'/coaching'}>View More</Link>
+              </Button>
+            </div>
           </div>
         </div>
       )}

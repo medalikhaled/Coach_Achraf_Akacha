@@ -1,0 +1,31 @@
+.span {
+  font-family: 'Teko', sans-serif;
+  font-weight: 600;
+}
+
+.span1 {
+  animation: ComeFromRight 0.8s ease-in-out;
+}
+
+.span2 {
+  opacity: 0;
+  margin-top: 1rem;
+  animation: ComeFromRight 0.8s ease-in-out 0.8s forwards;
+}
+
+.span3 {
+  opacity: 0;
+  margin-top: 1rem;
+  animation: ComeFromRight 0.6s ease-in-out 1.5s forwards;
+}
+
+@keyframes ComeFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100vw);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

@@ -1,9 +1,10 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import { ThemeProvider } from 'next-themes'
-import { Suspense, useState, useEffect } from 'react'
+import { Suspense, useState, useEffect, FC } from 'react'
 import Navigation from '../components/Navigation'
 import Head from 'next/head'
+import { AnimatePresence } from 'framer-motion'
 
 function MyApp({ Component, pageProps }: AppProps) {
   //to avoid Hydration mismatch
@@ -25,32 +26,23 @@ function MyApp({ Component, pageProps }: AppProps) {
         attribute="class"
         defaultTheme="system"
       >
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<h1>Loading...</h1>}>
           <Head>
             <title>Coach Achraf Akacha</title>
             <meta
               name="description"
               content="The Portfolio of the achraf akacha, a proffessional certified personal gym trainer"
             />
-            <link rel="icon" href="/favicon.ico" />
-            <link
-              href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Poppins:wght@100;300;700&display=swap"
-              rel="stylesheet"
-            />
-            <link rel="preconnect" href="https://fonts.googleapis.com" />
-            <link
-              rel="preconnect"
-              href="https://fonts.gstatic.com"
-              crossOrigin=""
-            />
-            <link
-              href="https://fonts.googleapis.com/css2?family=Teko:wght@300;600;700&display=swap"
-              rel="stylesheet"
-            />
           </Head>
 
           <Navigation />
-          <Component {...pageProps} />
+          <AnimatePresence
+            mode="wait"
+            initial={false}
+            onExitComplete={() => window.scrollTo(0, 0)}
+          >
+            <Component {...pageProps} />
+          </AnimatePresence>
         </Suspense>
       </ThemeProvider>
     )

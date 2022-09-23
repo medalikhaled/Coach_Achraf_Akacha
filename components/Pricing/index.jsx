@@ -2,6 +2,7 @@ import { Fragment } from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import { InView } from 'react-intersection-observer'
+import Link from 'next/link'
 
 export const textGradient =
   'text-transparent bg-gradient-to-r from-[#45caff] to-[#ff1b6b] bg-clip-text'
@@ -22,38 +23,44 @@ const Pricing = () => {
           </motion.h1>
 
           <div className="flex flex-col items-center justify-center gap-3 md:flex-row md:gap-6">
-            <Card
-              initial={{ y: 100, opacity: 0 }}
-              animate={inView ? { y: 0, opacity: 1 } : { y: 100, opacity: 0 }}
-              ref={ref}
-              transition={{ ease: 'easeOut', duration: 1.2 }}
-            >
-              <h1
-                className={`${textGradient} font-teko text-2xl font-normal md:text-4xl`}
+            <Link href={'/online'}>
+              <Card
+                initial={{ y: 100, opacity: 0 }}
+                animate={inView ? { y: 0, opacity: 1 } : { y: 100, opacity: 0 }}
+                ref={ref}
+                transition={{ ease: 'easeOut', duration: 1.2 }}
               >
-                Online
-              </h1>
-              <h3 className={`${textGradient} text-8xl`}>
-                70
-                <span className={`${textGradient} text-lg font-light`}>DT</span>
-              </h3>
-            </Card>
+                <h1
+                  className={`${textGradient} font-teko text-2xl font-normal md:text-4xl`}
+                >
+                  Online
+                </h1>
+                <h3 className={`${textGradient} text-8xl`}>
+                  70
+                  <span className={`${textGradient} text-lg font-light`}>
+                    DT
+                  </span>
+                </h3>
+              </Card>
+            </Link>
 
-            <Card
-              initial={{ y: 100, opacity: 0 }}
-              animate={inView ? { y: 0, opacity: 1 } : { y: 100, opacity: 0 }}
-              ref={ref}
-              transition={{ ease: 'easeOut', duration: 1.2 }}
-            >
-              <h1
-                className={`${textGradient} font-teko text-2xl font-normal md:text-4xl`}
+            <Link href={'/private'}>
+              <Card
+                initial={{ y: 100, opacity: 0 }}
+                animate={inView ? { y: 0, opacity: 1 } : { y: 100, opacity: 0 }}
+                ref={ref}
+                transition={{ ease: 'easeOut', duration: 1.2 }}
               >
-                Personal
-              </h1>
-              <h3 className={`${textGradient} text-8xl`}>
-                150<span className="text-lg font-light">DT</span>
-              </h3>
-            </Card>
+                <h1
+                  className={`${textGradient} font-teko text-2xl font-normal md:text-4xl`}
+                >
+                  Personal
+                </h1>
+                <h3 className={`${textGradient} text-8xl`}>
+                  150<span className="text-lg font-light">DT</span>
+                </h3>
+              </Card>
+            </Link>
           </div>
         </Fragment>
       )}
@@ -63,7 +70,7 @@ const Pricing = () => {
 
 export default Pricing
 
-const Card = styled(motion.div)`
+export const Card = styled(motion.div)`
   position: relative;
   background-color: #f5f5f5;
   padding: 30px 0;
