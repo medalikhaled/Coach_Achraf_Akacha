@@ -45,7 +45,7 @@ const Online = () => {
       <h1 className="mb-4 flex items-center justify-center text-center font-teko text-3xl font-semibold uppercase tracking-wide text-darkfirst dark:text-white md:text-left md:text-5xl md:tracking-wider">
         Online Training Offers{' '}
       </h1>
-      <main className="flex w-full flex-col place-content-center gap-4 px-10 md:flex-row">
+      <main className="flex w-full flex-col items-center justify-center  gap-4 px-10 md:flex-row">
         {Data.map((data, index) => (
           <Card data={data} key={index}>
             {data.price}
