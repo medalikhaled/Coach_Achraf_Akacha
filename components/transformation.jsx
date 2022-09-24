@@ -14,7 +14,7 @@ const Img = styled(motion.div)`
   background-repeat: no-repeat;
 
   @media (max-width: 768px) {
-    background-position: top;
+    background-position: center;
     height: 600px;
   }
 `
@@ -24,7 +24,7 @@ export default function Transformation() {
     <Fragment>
       <div className="flex h-full min-h-full w-full flex-col-reverse items-center justify-center gap-2 bg-white  dark:bg-darkfirst md:flex-row-reverse">
         <div className="flex  h-1/2 w-full flex-col items-center justify-center gap-1 p-2 md:h-full md:w-1/2">
-          <p className="w-[80%] text-center font-poppins font-light md:w-[50%]">
+          <p className="w-[80%]  text-center font-poppins font-light md:w-[50%]">
             I'm Proud that I have succeded to guid many clients to get in shape,
             boost their confidence and even to be a proffessional athletes.{' '}
             <br /> You can view some of the transformations that some clients
@@ -44,7 +44,7 @@ export default function Transformation() {
                 delay: 0.6,
                 ease: 'easeInOut',
               }}
-              className="h-1/2 w-full md:h-full md:w-1/2"
+              className=" h-1/2 min-h-[500px]  w-full md:h-full md:w-1/2"
               src={imageTwo}
             />
           )}

@@ -30,6 +30,7 @@ const data = [
     id: '03',
     title: 'COACHING PRIVÉ',
     imgUrl: '/photos/achraf8.png',
+    link: '/private',
     reverse: false,
     button: 'contactez-nous',
     paragraph:
@@ -42,6 +43,7 @@ const data = [
     imgUrl: '/photos/achraf1.png',
     reverse: true,
     button: 'contactez-nous',
+    link: '/online',
     paragraph:
       'Coaching a distance avec des instructions bien détaillées et des vidéos pour vous guider dans vos exercices. Vous pouvez également vous entraîner à la maison avec des exercices simples et efficaces.',
   },
@@ -121,7 +123,9 @@ const Card = ({ dataObject }) => {
 
             <div className="w-[60%]">
               <Button>
-                <Link href={'/coaching'}>View More</Link>
+                <Link href={dataObject.link ? dataObject.link : '/coaching'}>
+                  View More
+                </Link>
               </Button>
             </div>
           </div>

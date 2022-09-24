@@ -8,17 +8,7 @@ import 'swiper/css'
 import 'swiper/css/effect-fade'
 import { motion } from 'framer-motion'
 
-interface HeadingData {
-  image: string
-  sloganPartOne: string
-  sloganPartTwo: string
-  sloganPartThree: string
-  sloganPartFour: string | undefined
-  button: string
-  buttonAction: string
-}
-
-const headerData: HeadingData[] = [
+const headerData = [
   {
     image: '/photos/achraf4.png',
     sloganPartOne: 'action',
@@ -58,14 +48,11 @@ export default function Header() {
       onSwiper={(swiper) => console.log(swiper)}
       modules={[EffectFade, Autoplay]}
       effect="fade"
-      // modules={[EffectCards]}
-      // effect="cards"
       autoplay={{
         delay: 2500,
-        // pauseOnMouseEnter: true,
       }}
     >
-      {headerData.map((item: HeadingData, index: number) => {
+      {headerData.map((item, index) => {
         return (
           <SwiperSlide>
             <Heading
@@ -91,7 +78,7 @@ function Heading({
   sloganPartThree,
   button,
   buttonAction,
-}: any) {
+}) {
   return (
     <HeadingLayout
       initial={{ opacity: 0, x: -100 }}
@@ -141,7 +128,7 @@ const HeadingLayout = styled(motion.header)`
   max-height: 91vh;
   width: 100%;
   padding: 0 40px;
-  background-image: url(${({ data }: any) => data});
+  background-image: url(${({ data }) => data});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
