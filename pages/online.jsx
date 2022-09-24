@@ -16,7 +16,7 @@ const Data = [
   {
     id: '02',
     title: 'Workout Plan Only',
-    img: '/images/workout.png',
+    img: '/photos/achraf6.png',
     price: '50',
     delay: '.5',
   },
@@ -24,7 +24,7 @@ const Data = [
   {
     id: '03',
     title: 'Workout + Diet Plan',
-    img: '/images/imageex.png',
+    img: '/photos/achraf2.png',
     price: '70',
     delay: '.7',
   },
@@ -45,7 +45,7 @@ const Online = () => {
       <h1 className="mb-4 flex items-center justify-center text-center font-teko text-3xl font-semibold uppercase tracking-wide text-darkfirst dark:text-white md:text-left md:text-5xl md:tracking-wider">
         Online Training Offers{' '}
       </h1>
-      <main className="flex w-full flex-col items-center justify-center  gap-4 px-10 md:flex-row">
+      <main className="flex w-full flex-col items-center justify-center gap-4 px-10 md:flex-row">
         {Data.map((data, index) => (
           <Card data={data} key={index}>
             {data.price}
@@ -85,7 +85,13 @@ export const Card = ({ children, data }) => {
         {/* <p>{data.content}</p> */}
         <div className="card-actions">
           <button className="btn btn-primary mt-4 mb-8 rounded-lg border-[1px] border-[#ff1b6b] py-1 px-2">
-            Reserve Now
+            <Link
+              href={
+                'https://api.whatsapp.com/send/?phone=21624670205&text&type=phone_number&app_absent=0&fbclid=IwAR2cvkQWSzyt5o00BjpZyhMjsG8-0bkqauXBOXr74TTwpLzj5g7jv3VQEao'
+              }
+            >
+              Reserve Now
+            </Link>
           </button>
         </div>
       </div>

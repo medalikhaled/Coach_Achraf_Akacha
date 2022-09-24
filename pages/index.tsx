@@ -14,6 +14,7 @@ import Cursor from '../components/Cursor/cursor'
 import Social from '../components/social'
 import Scrolling from '../components/Scrolling'
 import Transformation from '../components/transformation'
+import Header from '../components/Header'
 
 export const variants = {
   hidden: { opacity: 0, x: -200, y: 0 },
@@ -33,8 +34,9 @@ const Home: NextPage = () => {
       className="relative"
     >
       <Scrolling position={'160vh'} />
-      <Scrolling position={'10vh'} />
+      <Scrolling position={'25vh'} />
 
+      <Header />
       <About />
 
       <Gallery />

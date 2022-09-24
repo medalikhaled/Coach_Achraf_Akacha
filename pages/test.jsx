@@ -15,15 +15,21 @@ const data = []
 
 const Test = () => {
   return (
-    <main className="mt-24">
-      <div className="h-screen min-h-[95vh] w-full bg-[#242424]">
-        <SlideOne data={data} />
-      </div>
-      <div className="mt-16 h-[500px] min-h-[500px] w-full">
-        <Header />
-      </div>
-    </main>
+    <div className="grid h-full min-h-screen w-screen place-content-center">
+      <motion.div
+        className="container h-[150px] w-[150px] bg-red-500"
+        animate={{
+          scale: [1, 2, 2, 1, 1],
+          rotate: [0, 0, 270, 270, 0],
+          borderRadius: ['20%', '20%', '50%', '50%', '20%'],
+        }}
+      />
+    </div>
   )
 }
 
 export default Test
+
+// <div className="mt-16 h-[500px] min-h-[500px] w-full">
+// <Header />
+// </div>

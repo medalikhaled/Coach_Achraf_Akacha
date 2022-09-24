@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { EffectFade, Autoplay, EffectCube } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/effect-fade'
+import { motion } from 'framer-motion'
 
 interface HeadingData {
   image: string
@@ -19,16 +20,6 @@ interface HeadingData {
 
 const headerData: HeadingData[] = [
   {
-    image: '/photos/achraf2.png',
-    sloganPartOne: 'action',
-    sloganPartTwo: 'is the key',
-    sloganPartThree: 'to all sucess',
-    sloganPartFour: undefined,
-    // animation: ""
-    button: 'Contact Me',
-    buttonAction: '',
-  },
-  {
     image: '/photos/achraf4.png',
     sloganPartOne: 'action',
     sloganPartTwo: 'is the key',
@@ -40,6 +31,16 @@ const headerData: HeadingData[] = [
 
   {
     image: '/photos/achraf7.png',
+    sloganPartOne: 'action',
+    sloganPartTwo: 'is the key',
+    sloganPartThree: 'to all sucess',
+    sloganPartFour: undefined,
+    button: 'Contact Me',
+    buttonAction: '',
+  },
+
+  {
+    image: '/photos/achraf9.png',
     sloganPartOne: 'action',
     sloganPartTwo: 'is the key',
     sloganPartThree: 'to all sucess',
@@ -73,11 +74,6 @@ export default function Header() {
               sloganPartOne={item.sloganPartOne}
               sloganPartTwo={item.sloganPartTwo}
               sloganPartThree={item.sloganPartThree}
-              /*
-            sloganPartFour={
-              item.sloganPartFour !== undefined ? item.sloganPartFour : null
-            }
-            */
               button={item.button}
               buttonAction={item.buttonAction}
             />
@@ -96,18 +92,17 @@ function Heading({
   button,
   buttonAction,
 }: any) {
-  //   const [state, setState] = useState(0)
-
-  //   const handleClick = () => {
-  //     setState(buttonAction)
-  //   }
-
   return (
-    <HeadingLayout>
-      <Image src={image} layout="fill" style={{ zIndex: '-10' }} />
+    <HeadingLayout
+      initial={{ opacity: 0, x: -100 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ ease: 'easeOut', duration: 0.8 }}
+      data={image}
+    >
+      {/* <Image src={image} layout="fill" style={{ zIndex: '-10' }} /> */}
 
       <div
-        className={`z-[20] flex h-full min-w-full flex-col items-center justify-center p-2 md:min-h-full md:w-1/2 `}
+        className={`z-[20]  flex h-full min-w-full flex-col items-center justify-center p-2 md:min-h-full md:w-1/2 `}
       >
         <h1 className=" mt-12 h-[60%] text-center text-5xl uppercase text-white md:max-h-[60%] md:min-w-[60%] md:text-left md:text-7xl">
           <span className={`${styles.span} ${styles.span1}`}>
@@ -124,12 +119,12 @@ function Heading({
         </h1>
 
         <div className="z-[30] md:min-h-[20%]">
-          <button
+          {/* <button
             // onClick={handleClick}
             className="rounded-lg border-[2px] border-violet-400 px-4 py-2 text-2xl text-white hover:cursor-pointer "
           >
             {button}
-          </button>
+          </button> */}
         </div>
       </div>
       <div></div>
@@ -137,7 +132,8 @@ function Heading({
   )
 }
 
-const HeadingLayout = styled.header`
+const HeadingLayout = styled(motion.header)`
+  margin-top: 64px;
   position: relative;
   display: flex;
   place-content: center;
@@ -145,6 +141,11 @@ const HeadingLayout = styled.header`
   max-height: 91vh;
   width: 100%;
   padding: 0 40px;
+  background-image: url(${({ data }: any) => data});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -10;
 
   z-index: 0;
 

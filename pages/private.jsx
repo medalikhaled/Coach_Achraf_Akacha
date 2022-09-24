@@ -11,14 +11,14 @@ const Data = [
     title: 'Solo Private',
     titlerest: 'Session',
     price: '20',
-    img: 'photos/achraf2.png',
+    img: 'photos/transformation1.png',
   },
   {
     id: '02',
     title: 'Workout + Diet',
     price: '150',
     titlerest: '1 month',
-    img: 'photos/achraf4.png',
+    img: 'photos/transform4.png',
   },
 ]
 
@@ -34,7 +34,7 @@ export default function Private() {
       transition={{ type: 'linear', duration: 0.5 }}
       className="mt-20 w-full"
     >
-      <div className="mt-48  md:mt-0">
+      <div className="mt-80 md:mt-0">
         <h1 className="mb-4 flex items-center justify-center py-4 text-center font-teko text-3xl font-semibold uppercase tracking-wide text-darkfirst dark:text-white  md:mb-0 md:py-0 md:text-left md:text-5xl md:tracking-wider">
           Personal Training Offers{' '}
         </h1>
